@@ -72,7 +72,7 @@
             }
         }
     }
-
+    
     if ($json.vulnerabilities) {    
         Add-Content -Path $outFile -Value ""
         Add-Content -Path $outFile -Value "## Vulnerabilities"
@@ -94,11 +94,20 @@
             }
 
             if ($vulnerability.notes) {
-                Add-Content -Path $outFile -Value ""
-                Add-Content -Path $outFile -Value "### Summary"
                 $summary = $vulnerability.notes | Where-Object { $_.category -eq "summary" } | Select-Object -First 1
-                $line = $summary.text + "  "
-                Add-Content -Path $outFile -Value $line
+                if ($summary) {
+                    Add-Content -Path $outFile -Value ""
+                    Add-Content -Path $outFile -Value "### Summary"
+                    $line = $summary.text + "  "
+                    Add-Content -Path $outFile -Value $line
+                }
+                $description = $vulnerability.notes | Where-Object { $_.category -eq "description" } | Select-Object -First 1
+                if ($description) {
+                    Add-Content -Path $outFile -Value ""
+                    Add-Content -Path $outFile -Value "### Note"
+                    $line = $description.text + "  "
+                    Add-Content -Path $outFile -Value $line
+                }
             }
 
             if ($vulnerability.cwe) {    
@@ -111,7 +120,17 @@
                 Add-Content -Path $outFile -Value ""
                 Add-Content -Path $outFile -Value "### Threats"
                 foreach ($threat in $vulnerability.threats) {
-                    $line = "- " + $threat.details
+                    $line = "- "
+
+                    if ($threat.category -eq "impact") {
+                        $line += "[**Impact**] "
+                    }  
+
+                    if ($threat.category -eq "target_set") {
+                        $line += "[**Precondition**] "
+                    }  
+
+                    $line += $threat.details
                     Add-Content -Path $outFile -Value $line
                 }
             }
@@ -161,11 +180,20 @@
                     Add-Content -Path $outFile -Value "  " 
                 }
             }
-            if ($vulnerability.acknowledgments) {    
+            if ($vulnerability.acknowledgments) {
                 Add-Content -Path $outFile -Value ""
                 Add-Content -Path $outFile -Value "### Acknowledgments"
                 foreach ($acknowledgment in $vulnerability.acknowledgments) {
-                    $line = "- " + ($acknowledgment.names -join ",") + " of " + $acknowledgment.organization + " for " + $acknowledgment.summary
+                    $line = "- " + ($acknowledgment.names -join ", ")
+                    if ($acknowledgment.organization) {
+                        $line += ", " + $acknowledgment.organization
+                    }
+                    Add-Content -Path $outFile -Value $line
+                }
+                $summaries = $vulnerability.acknowledgments | Where-Object { $_.summary } | Select-Object -First 1
+                if ($summaries) {
+                    Add-Content -Path $outFile -Value ""
+                    $line = $summaries.summary
                     Add-Content -Path $outFile -Value $line
                 }
             }
