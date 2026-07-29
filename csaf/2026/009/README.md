@@ -5,7 +5,7 @@
 |**Publication Date**|2026-06-30|
 |**Version**|1.0.0|
 |**Status**|draft|
-|**Distribution**|[AMBER](https://www.first.org/tlp/)|
+|**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
 |**Namespace**|[https://opcfoundation.org/security/csaf](https://opcfoundation.org/security/csaf)|
@@ -22,7 +22,7 @@ An attacker can intercept a high privilege console window launched during instal
 
 ### Threats
 - [**Impact**] An attacker can grab a high privilege terminal during installation and run arbitrary commands.
-- [**Precondition**] The attacker must be able to launch an installer with elevated privileges and have access to the screen while the installation is taking place.
+- [**Precondition**] The attacker must be able to launch an installer with elevated privileges and have access to the keyboard and display while the installation is taking place.
 
 ### CVSS Score
 **Base Score:** <span style='color:orange'>4.6 (MEDIUM)</span>  
