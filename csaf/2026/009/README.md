@@ -37,7 +37,7 @@ Update to OPC UA LDS Installers 1.04.420 or later.
 
 ##  References
 
-[Advisory Source](https://github.com/OPCFoundation/SecurityAdvisories/tree/latest/csaf/2026/009)  
+[Advisory Source](https://github.com/OPCFoundation/OPC-SecurityAdvisories/tree/latest/csaf/2026/009)  
 
 ##  Legal Disclaimer
 
