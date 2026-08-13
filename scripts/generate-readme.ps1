@@ -22,7 +22,7 @@
         Add-Content -Path $outFile -Value "|---|---|"
 
         if ($json.document.tracking.current_release_date) {
-            $line = "|**Publication Date**|" + [datetime]::Parse($json.document.tracking.current_release_date).ToString("yyyy-MM-dd") + "|"
+            $line = "|**Publication Date**|" + [datetimeoffset]::Parse($json.document.tracking.current_release_date).UtcDateTime.ToString("yyyy-MM-dd") + "|"
             Add-Content -Path $outFile -Value $line
         }
         if ($json.document.tracking.version) {
@@ -108,6 +108,18 @@
                     $line = $description.text + "  "
                     Add-Content -Path $outFile -Value $line
                 }
+                $others = $vulnerability.notes | Where-Object { $_.category -notin @("summary", "description") }
+                foreach ($other in $others) {
+                    Add-Content -Path $outFile -Value ""
+                    if ($other.title) {
+                        Add-Content -Path $outFile -Value ("### " + $other.title)
+                    }
+                    else {
+                        Add-Content -Path $outFile -Value "### Note"
+                    }
+                    $line = $other.text + "  "
+                    Add-Content -Path $outFile -Value $line
+                }
             }
 
             if ($vulnerability.cwe) {    
@@ -153,13 +165,14 @@
             if ($vulnerability.remediations) {    
                 Add-Content -Path $outFile -Value ""
                 Add-Content -Path $outFile -Value "### Remediations"
-                $fix = $vulnerability.remediations | Where-Object { $_.category -eq "vendor_fix" } | Select-Object -First 1
+                $fixes = $vulnerability.remediations | Where-Object { $_.category -eq "vendor_fix" }
                 $first = $true
-                if ($fix){
+                foreach ($fix in $fixes){
+                    if (-not $first) { Add-Content -Path $outFile -Value "  " }
                     $line = "**Vendor Fix**" + " ([link](" + $fix.url + "))  "
                     Add-Content -Path $outFile -Value $line
                     $line = $fix.details + "  "
-                    Add-Content -Path $outFile -Value $line 
+                    Add-Content -Path $outFile -Value $line
                     $first = $false
                 }
                 $mitigation = $vulnerability.remediations | Where-Object { $_.category -eq "mitigation" } | Select-Object -First 1

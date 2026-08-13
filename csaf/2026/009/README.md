@@ -2,7 +2,7 @@
 
 |||
 |---|---|
-|**Publication Date**|2026-06-30|
+|**Publication Date**|2026-07-01|
 |**Version**|1.0.0|
 |**Status**|draft|
 |**Distribution**|[WHITE](https://www.first.org/tlp/)|
