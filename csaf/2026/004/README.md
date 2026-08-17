@@ -19,7 +19,7 @@
 If the keys for any encrypted channel (OPC UA and non-OPC UA) are compromised, user passwords transmitted within the channel can be recovered.  
 
 ### Disposition: Informational
-TThis item is published for the record as an informational advisory. No CVSS score and no vulnerability severity are assigned. The issue was reported by security researchers, however, the working group concluded that no normative change to the specification was needed. The specification already recommends that applications never set the SecurityPolicy to None for UserIdentityTokens that include a secret, and the exposure described depends on the compromise of the keys that protect the channel, a condition that applies to any protocol which carries a password inside an encrypted channel.  
+This item is published for the record as an informational advisory. No CVSS score and no vulnerability severity are assigned. The issue was reported by security researchers, however, the working group concluded that no normative change to the specification was needed. The specification already recommends that applications never set the SecurityPolicy to None for UserIdentityTokens that include a secret, and the exposure described depends on the compromise of the keys that protect the channel, a condition that applies to any protocol which carries a password inside an encrypted channel.  
 
 [CWE-319](https://cwe.mitre.org/data/definitions/319.html): Cleartext Transmission of Sensitive Information  
 
