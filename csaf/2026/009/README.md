@@ -2,9 +2,9 @@
 
 |||
 |---|---|
-|**Publication Date**|2026-07-01|
-|**Version**|1.0.0|
-|**Status**|draft|
+|**Publication Date**|2026-08-24|
+|**Version**|1.0.1|
+|**Status**|release|
 |**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
@@ -16,6 +16,8 @@
 
 ## Vulnerabilities
 ### GCVE-105-2026-009
+Also tracked as [CVE-2026-77477](https://www.cve.org/CVERecord?id=CVE-2026-77477)  
+
 An attacker can intercept a high privilege console window launched during installation of the LDS.  
 
 [CWE-269](https://cwe.mitre.org/data/definitions/269.html): Improper Privilege Management  
