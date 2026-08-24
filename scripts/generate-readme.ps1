@@ -77,17 +77,38 @@
         Add-Content -Path $outFile -Value ""
         Add-Content -Path $outFile -Value "## Vulnerabilities"
         foreach ($vulnerability in $json.vulnerabilities) {
+            $primaryId = $null
             if ($vulnerability.cve) {
-                $line = "### " + $vulnerability.cve
+                $primaryId = $vulnerability.cve
+            }
+            elseif ($vulnerability.ids) {
+                $primaryId = $vulnerability.ids[0].text
+            }
+
+            if ($primaryId) {
+                $line = "### " + $primaryId
                 Add-Content -Path $outFile -Value $line
             }
-            else {
-                if ($vulnerability.ids) {
-                    $line = "### " + $vulnerability.ids[0].text
+
+            if ($vulnerability.ids) {
+                $secondaryIds = @()
+                foreach ($id in $vulnerability.ids) {
+                    if ($id.text -and $id.text -ne $primaryId) {
+                        if ($id.system_name -eq "CVE") {
+                            $secondaryIds += "[" + $id.text + "](https://www.cve.org/CVERecord?id=" + $id.text + ")"
+                        }
+                        else {
+                            $secondaryIds += $id.text
+                        }
+                    }
+                }
+                if ($secondaryIds.Count -gt 0) {
+                    $line = "Also tracked as " + ($secondaryIds -join ", ") + "  "
                     Add-Content -Path $outFile -Value $line
+                    Add-Content -Path $outFile -Value ""
                 }
             }
-        
+
             if ($vulnerability.title) {
                 $line = $vulnerability.title + "  "
                 Add-Content -Path $outFile -Value $line
