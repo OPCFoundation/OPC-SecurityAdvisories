@@ -2,8 +2,8 @@
 
 |||
 |---|---|
-|**Publication Date**|2026-08-12|
-|**Version**|1.0.0|
+|**Publication Date**|2026-09-15|
+|**Version**|1.0.1|
 |**Status**|release|
 |**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
@@ -18,6 +18,9 @@
 ## Vulnerabilities
 ### GCVE-105-2026-003
 If private keys of a client and server are compromised, an attacker may re-use a certificate user identity sent over a different secure channel.  
+
+### CVSS Scope Assessment (vendor / reporter disagreement)
+The CVSS v3.1 score published here uses Scope:Unchanged (S:U): 5.9 (MEDIUM). The reporters assess Scope:Changed (S:C): 7.7 (HIGH). The disagreement concerns only the Scope metric. Reporter position: OPC UA secure-channel security (UA-SC/PKI) and session-and-user authentication are two distinct security authorities, each with its own certificate exchange and potentially implemented as separate components or processes; the attack chains a channel-layer key compromise into a session/user-identity compromise, crossing from one authority to the other, which the reporters consider a scope change. OPC Foundation position: the impacted resources (the Server's nodes, address space, and operations) are governed by exactly one security authority which evaluates the client certificate, the endpoint used, the user token, and other configured criteria as inputs to a single access-control decision applied on every operation (OPC 10000-18 4.4). The SecureChannel and PKI authenticate endpoints; they do not define or enforce which operations a subject may perform on Server resources. A separable implementation is not a separate security authority; CVSS Scope concerns authorization domains, not library, process, or code boundaries. The attack is a horizontal move to impersonate another user to the same Server and reach that Server's resources, which is the standard Scope:Unchanged pattern.  
 
 [CWE-294](https://cwe.mitre.org/data/definitions/294.html): Authentication Bypass by Capture-replay  
 
