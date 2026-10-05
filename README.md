@@ -4,7 +4,7 @@ The OPC Foundation publishes security advisories that affect specifications or s
 
 Any vulnerabilities or security concerns should be reported to ‘securityteam AT opcfoundation DOT org’. 
 
-A PGP key to encrypt any sensitive security report can be found [here](https://files.opcfoundation.org/SecurityBulletins/securityteam_public_key.txt). 
+A PGP key to encrypt any sensitive security report can be found [here](https://opcfoundation.org/SecurityBulletins/securityteam_public_key.txt). 
 
 This repository provides machine-readable security advisories using the [OASIS Common Security Advisory Framework (CSAF) Version 2.0 standard](https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html). By providing machine-readable advisories using CSAF v2.0, vendors and providers of software and hardware can take proactive steps to enable automation and help to reduce the time required for enterprises to understand organizational impact and drive timely remediation.
 
