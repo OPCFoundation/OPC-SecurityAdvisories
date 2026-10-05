@@ -2,7 +2,10 @@
 ## Overview
 The OPC Foundation publishes security advisories that affect specifications or software that it maintains or distributes. In many cases these bulletins will affect code that OPC vendors incorporate into their products. As a result, vendors will have to patch their products to address the vulnerabilities identified. 
 
-Any vulnerabilities or security concerns should be reported to ‘securityteam AT opcfoundation DOT org’. 
+Any vulnerabilities or security concerns should be reported by:
+
+1) Submitting a [private report](https://github.com/OPCFoundation/OPC-SecurityAdvisories/security) to GitHub;
+2) Email to ‘securityteam AT opcfoundation DOT org’. 
 
 A PGP key to encrypt any sensitive security report can be found [here](https://opcfoundation.org/SecurityBulletins/securityteam_public_key.txt). 
 
