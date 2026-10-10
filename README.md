@@ -21,5 +21,5 @@ The OPC UA Security WG then determines the best course of action. A notice is se
 
 After review, the OPC UA Security WG will set a time line for making the vulnerability public. The time line will depend on the severity of the vulnerability and the time needed by SDK vendors to produce a patch for their products. When a vulnerability is made pubic it will appear on this page with details on where to find updated software. Any member of the public who wishes to receive notifications when new Security Advisories should watch this repository.
 
-When a vulnerability is made public, the OPC Foundation will post a [CSAF compliant](https://www.oasis-open.org/standard/common-security-advisory-framework-version-2-0/) document to this repository. The document will have a signature provided by the OPC Foundation using public keys which are published [here](https://github.com/OPCFoundation/SecurityAdvisories/keys).
+When a vulnerability is made public, the OPC Foundation will post a [CSAF compliant](https://www.oasis-open.org/standard/common-security-advisory-framework-version-2-0/) document to this repository. The document will have a signature provided by the OPC Foundation using public keys which are published [here](https://github.com/OPCFoundation/OPC-SecurityAdvisories/tree/latest/csaf/keys).
 
