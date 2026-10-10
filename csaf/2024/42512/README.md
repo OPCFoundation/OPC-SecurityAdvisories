@@ -2,9 +2,10 @@
 
 |||
 |---|---|
-|**Publication Date**|2025-02-08|
-|**Version**|1.0.0|
+|**Publication Date**|2026-10-10|
+|**Version**|1.0.1|
 |**Status**|final|
+|**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
 |**Namespace**|[https://opcfoundation.org/security/csaf](https://opcfoundation.org/security/csaf)|
@@ -15,12 +16,14 @@
 
 ## Vulnerabilities
 ### CVE-2024-42512
+Also tracked as GCVE-105-2024-42512  
+
 Bypass of application authentication via Basic128Rsa15 in OPC UA .NET Standard Stack  
 
 [CWE-208](https://cwe.mitre.org/data/definitions/208.html): Observable Timing Discrepancy  
 
 ### Threats
-- Unauthorized attacker can bypass application authentication when Basic128Rsa15 is enabled. Most users unaffected as it is disabled by default.
+- [**Impact**] Unauthorized attacker can bypass application authentication when Basic128Rsa15 is enabled. Most users unaffected as it is disabled by default.
 
 ### CVSS Score
 **Base Score:** <span style='color:orange'>5.9 (MEDIUM)</span>  
@@ -35,7 +38,13 @@ Disable the Basic128Rsa15 security policy.
   
 
 ### Acknowledgments
-- Tom Tervoort of Secura B.V. for Reported the issue.
+- Tom Tervoort, Secura B.V.
+
+Reported the issue.
+
+##  References
+
+[Advisory Source](https://opcfoundation.org/security/csaf/2024/42512/gcve-105-2024-42512.json)  
 
 ##  Legal Disclaimer
 

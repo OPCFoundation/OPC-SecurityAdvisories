@@ -2,8 +2,8 @@
 
 |||
 |---|---|
-|**Publication Date**|2025-01-31|
-|**Version**|1.0.0|
+|**Publication Date**|2026-10-10|
+|**Version**|1.0.1|
 |**Status**|final|
 |**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
@@ -24,7 +24,7 @@ An unauthorized attacker can consume all available connections by exploiting imp
 [CWE-404](https://cwe.mitre.org/data/definitions/404.html): Improper Resource Shutdown or Release  
 
 ### Threats
-- Denial of service via resource exhaustion.
+- [**Impact**] Denial of service via resource exhaustion.
 
 ### CVSS Score
 **Base Score:** <span style='color:red'>7.5 (HIGH)</span>  
@@ -43,11 +43,13 @@ Do not use sign-only; always enable encryption.
   
 
 ### Acknowledgments
-- Rikard Hansson of ABB for discovering the issue.
+- Rikard Hansson, ABB
+
+discovering the issue.
 
 ##  References
 
-[Advisory Source](https://github.com/OPCFoundation/OPC-SecurityAdvisories/tree/latest/csaf/2025/001)  
+[Advisory Source](https://opcfoundation.org/security/csaf/2025/001/gcve-105-2025-001.json)  
 
 ##  Legal Disclaimer
 

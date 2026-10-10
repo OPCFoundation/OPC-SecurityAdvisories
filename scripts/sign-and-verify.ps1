@@ -18,6 +18,13 @@ Get-ChildItem -Filter *.json | ForEach-Object {
     & gpg --verify $ascFile $jsonFile
 
     Write-Host "Generating SHA512 hash for $jsonFile" -ForegroundColor Green
-    & certutil -hashfile $jsonFile sha512 > $shaFile
+    # CSAF Requirement 18 expects sha512sum format: the lowercase hex hash,
+    # two spaces, then the file name. Do not use "certutil -hashfile" here --
+    # it emits a UTF-16 file with a "SHA512 hash of <name>:" header line that
+    # CSAF tools cannot parse.
+    $hash = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA512).Hash.ToLowerInvariant()
+    $shaPath = Join-Path $_.DirectoryName $shaFile
+    $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+    [System.IO.File]::WriteAllText($shaPath, "$hash  $jsonFile`n", $utf8NoBom)
     & type $shaFile
 }

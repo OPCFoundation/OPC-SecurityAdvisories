@@ -2,9 +2,9 @@
 
 |||
 |---|---|
-|**Publication Date**|2026-08-12|
-|**Version**|1.0.0|
-|**Status**|release|
+|**Publication Date**|2026-10-10|
+|**Version**|1.0.1|
+|**Status**|final|
 |**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
@@ -48,7 +48,7 @@ For discovering the issue using the ProVerif protocol analyzer, see eprint https
 
 ##  References
 
-[Advisory Source](https://github.com/OPCFoundation/SecurityAdvisories/tree/latest/csaf/2026/006)  
+[Advisory Source](https://opcfoundation.org/security/csaf/2026/006/gcve-105-2026-006.json)  
 [Mantis Issue](https://mantis.opcfoundation.org/view.php?id=10056)  
 [A Comprehensive Formal Security Analysis of OPC UA](https://eprint.iacr.org/2025/148)  
 

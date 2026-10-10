@@ -2,9 +2,10 @@
 
 |||
 |---|---|
-|**Publication Date**|2025-02-08|
-|**Version**|1.0.0|
+|**Publication Date**|2026-10-10|
+|**Version**|1.0.1|
 |**Status**|final|
+|**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
 |**Namespace**|[https://opcfoundation.org/security/csaf](https://opcfoundation.org/security/csaf)|
@@ -15,12 +16,14 @@
 
 ## Vulnerabilities
 ### CVE-2024-42513
+Also tracked as GCVE-105-2024-42513  
+
 Authentication bypass via HTTPS in OPC UA .NET Standard Stack  
 
 [CWE-305](https://cwe.mitre.org/data/definitions/305.html): Authentication Bypass by Primary Weakness  
 
 ### Threats
-- An unauthorized attacker can bypass application authentication using HTTPS endpoints with security policies other than 'None'.
+- [**Impact**] An unauthorized attacker can bypass application authentication using HTTPS endpoints with security policies other than 'None'.
 
 ### CVSS Score
 **Base Score:** <span style='color:orange'>6.5 (MEDIUM)</span>  
@@ -35,7 +38,13 @@ Disable all HTTPS endpoints or configure them to use the 'None' security policy.
   
 
 ### Acknowledgments
-- Tom Tervoort of Secura B.V. for Reported the issue.
+- Tom Tervoort, Secura B.V.
+
+Reported the issue.
+
+##  References
+
+[Advisory Source](https://opcfoundation.org/security/csaf/2024/42513/gcve-105-2024-42513.json)  
 
 ##  Legal Disclaimer
 

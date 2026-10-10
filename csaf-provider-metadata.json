@@ -1,18 +1,18 @@
 {
-  "canonical_url": "https://github.com/OPCFoundation/OPC-SecurityAdvisories/blob/latest/csaf-provider-metadata.json",
+  "canonical_url": "https://opcfoundation.org/security/csaf/provider-metadata.json",
   "distributions": [
     {
-      "directory_url": "https://github.com/OPCFoundation/OPC-SecurityAdvisories/blob/latest/csaf"
+      "directory_url": "https://opcfoundation.org/security/csaf"
     }
   ],
-  "last_updated": "2025-05-20T15:17:34.129892Z",
+  "last_updated": "2026-10-10T00:00:00Z",
   "list_on_CSAF_aggregators": true,
   "metadata_version": "2.0",
   "mirror_on_CSAF_aggregators": true,
   "public_openpgp_keys": [
     {
       "fingerprint": "651DFC3625181D8C7D443E746283C3513199FAF8",
-      "url": "https://github.com/OPCFoundation/OPC-SecurityAdvisories/blob/latest/keys/OPC%20Foundation%20Security%20Team_651DFC3625181D8C7D443E746283C3513199FAF8_public.asc"
+      "url": "https://opcfoundation.org/security/csaf/keys/OPC%20Foundation%20Security%20Team_651DFC3625181D8C7D443E746283C3513199FAF8_public.asc"
     }
   ],
   "publisher": {

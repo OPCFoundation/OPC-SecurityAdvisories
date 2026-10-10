@@ -2,9 +2,10 @@
 
 |||
 |---|---|
-|**Publication Date**|2024-10-14|
-|**Version**|1.0.0|
+|**Publication Date**|2026-10-10|
+|**Version**|1.0.1|
 |**Status**|final|
+|**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
 |**Namespace**|[https://opcfoundation.org/security/csaf](https://opcfoundation.org/security/csaf)|
@@ -15,12 +16,14 @@
 
 ## Vulnerabilities
 ### CVE-2024-45526
+Also tracked as GCVE-105-2024-45526  
+
 Performance degradation attack in OPC UA .NET Standard Stack  
 
 [CWE-770](https://cwe.mitre.org/data/definitions/770.html): Allocation of Resources Without Limits or Throttling  
 
 ### Threats
-- An unauthorized attacker can trigger a gradual degradation in performance.
+- [**Impact**] An unauthorized attacker can trigger a gradual degradation in performance.
 
 ### CVSS Score
 **Base Score:** <span style='color:orange'>5.3 (MEDIUM)</span>  
@@ -35,7 +38,13 @@ Disable saving rejected certificates after authentication failure.
   
 
 ### Acknowledgments
-- Florian Kohnhäuser of ABB for Reported the issue.
+- Florian Kohnhäuser, ABB
+
+Reported the issue.
+
+##  References
+
+[Advisory Source](https://opcfoundation.org/security/csaf/2024/45526/gcve-105-2024-45526.json)  
 
 ##  Legal Disclaimer
 

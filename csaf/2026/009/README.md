@@ -2,9 +2,9 @@
 
 |||
 |---|---|
-|**Publication Date**|2026-08-24|
-|**Version**|1.0.1|
-|**Status**|release|
+|**Publication Date**|2026-10-10|
+|**Version**|1.0.2|
+|**Status**|final|
 |**Distribution**|[WHITE](https://www.first.org/tlp/)|
 |**Publisher**|OPC Foundation|
 |**Publisher Type**|vendor|
@@ -15,8 +15,8 @@
 - OPCFoundation/UA-LDS-Installers <1.04.420
 
 ## Vulnerabilities
-### GCVE-105-2026-009
-Also tracked as [CVE-2026-77477](https://www.cve.org/CVERecord?id=CVE-2026-77477)  
+### CVE-2026-77477
+Also tracked as GCVE-105-2026-009  
 
 An attacker can intercept a high privilege console window launched during installation of the LDS.  
 
@@ -39,7 +39,7 @@ Update to OPC UA LDS Installers 1.04.420 or later.
 
 ##  References
 
-[Advisory Source](https://github.com/OPCFoundation/OPC-SecurityAdvisories/tree/latest/csaf/2026/009)  
+[Advisory Source](https://opcfoundation.org/security/csaf/2026/009/gcve-105-2026-009.json)  
 
 ##  Legal Disclaimer
 
