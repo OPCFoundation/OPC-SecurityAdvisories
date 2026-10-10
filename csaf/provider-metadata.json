@@ -2,10 +2,10 @@
   "canonical_url": "https://opcfoundation.org/security/csaf/provider-metadata.json",
   "distributions": [
     {
-      "directory_url": "https://opcfoundation.org/security/csaf"
+      "directory_url": "https://opcfoundation.org/security/csaf/"
     }
   ],
-  "last_updated": "2026-10-10T00:00:00Z",
+  "last_updated": "2026-10-11T00:00:00Z",
   "list_on_CSAF_aggregators": true,
   "metadata_version": "2.0",
   "mirror_on_CSAF_aggregators": true,

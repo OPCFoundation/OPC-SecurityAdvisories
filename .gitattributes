@@ -1,0 +1,12 @@
+# CSAF artifacts are hashed (.sha512) and signed (.asc) byte-for-byte, so git
+# must not rewrite their line endings.
+#
+# With core.autocrlf=true and no rule here, git stored LF while the hashes and
+# signatures were produced against the CRLF working tree. Every consumer
+# fetching the raw files then saw a hash mismatch and a BAD signature, because
+# raw.githubusercontent.com serves the stored blob, not the working tree.
+#
+# "-text" disables all end-of-line conversion, so what is committed and served
+# is exactly what was hashed and signed. Diffs still work ("binary" would also
+# disable those).
+csaf/** -text
